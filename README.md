@@ -1,5 +1,5 @@
 
-# 🌐 Web Development Learning Journal
+#  Web Development Learning Journal
 
 ## About This Repository
 
@@ -9,7 +9,7 @@ The goal of this repository is to strengthen my fundamentals and track my learni
 
 ---
 
-## 📚 Table of Contents
+##  Table of Contents
 
 * [Projects Built](#-projects-built)
 * [How a Website Loads](#-how-a-website-loads)
@@ -24,7 +24,7 @@ The goal of this repository is to strengthen my fundamentals and track my learni
 
 ---
 
-# 📁 Projects Built
+#  Projects Built
 
 | Project                 | Skills Practiced                                              |
 | ----------------------- | ------------------------------------------------------------- |
@@ -35,7 +35,7 @@ The goal of this repository is to strengthen my fundamentals and track my learni
 
 ---
 
-# 🌍 How a Website Loads
+#  How a Website Loads
 
 Whenever we open a website, the browser performs several steps before displaying the page.
 
@@ -111,13 +111,13 @@ Content-Type: text/html
 | 404  | Not Found             |
 | 500  | Internal Server Error |
 
-> 💡 **Note**
+>  **Note**
 >
 > Opening a webpage doesn't send just one request. The browser makes separate requests for HTML, CSS, JavaScript, images, fonts, and other resources.
 
 ---
 
-# 🛠 Browser Developer Tools
+#  Browser Developer Tools
 
 Developer Tools helped me inspect webpages and debug issues while building projects.
 
@@ -132,7 +132,7 @@ Instead of guessing why something wasn't working, I learned to use DevTools to i
 
 ---
 
-## 📌 Quick Revision
+##  Quick Revision
 
 * **DNS** → Converts domain name to IP address.
 * **HTTP** → Communication between browser and server.
@@ -141,7 +141,7 @@ Instead of guessing why something wasn't working, I learned to use DevTools to i
 * **404** → Resource not found.
 * **500** → Internal server error.
 * **One webpage = Multiple HTTP requests.**
-# 📝 HTML (HyperText Markup Language)
+#  HTML (HyperText Markup Language)
 
 HTML is the standard markup language used to create the **structure** of a webpage. It defines what each element represents, while CSS is responsible for its appearance.
 
@@ -227,7 +227,7 @@ Example:
 * Helps search engines understand page structure.
 * Makes code easier to maintain.
 
-> 💡 **Tip**
+>  **Tip**
 >
 > Use semantic elements whenever possible. They make your code more meaningful than using `<div>` for everything.
 
@@ -285,7 +285,7 @@ Forms are used to collect information from users.
 
 ---
 
-## 📌 Quick Revision
+##  Quick Revision
 
 * **HTML** → Webpage structure
 * **Semantic HTML** → Meaningful elements
@@ -294,7 +294,7 @@ Forms are used to collect information from users.
 * **`alt`** → Image description for accessibility
 * **Forms** → Collect user input
 * **Tables** → Only for tabular data
-# 🎨 CSS (Cascading Style Sheets)
+#  CSS (Cascading Style Sheets)
 
 CSS is used to style HTML elements. It controls the colors, fonts, spacing, layout, and responsiveness of a webpage.
 
@@ -322,7 +322,7 @@ Used for small changes but not recommended for larger projects.
 
 Useful for small webpages.
 
-### External CSS ✅
+### External CSS 
 
 ```html
 <link rel="stylesheet" href="style.css">
@@ -361,7 +361,7 @@ h1 {
 | Universal  | `*`       | Selects every element      |
 | Descendant | `nav a`   | Selects child elements     |
 
-> 💡 **Tip**
+>  **Tip**
 >
 > Use **classes** for reusable styles and **IDs** only for unique elements.
 
@@ -500,13 +500,13 @@ Media Query:
 * Incorrect file paths.
 * Missing braces or semicolons.
 
-> ⚠️ **Common Mistake**
+>  **Common Mistake**
 >
 > If `justify-content` or `align-items` isn't working, first check whether the parent element has `display: flex`.
 
 ---
 
-## 📌 Quick Revision
+##  Quick Revision
 
 * **CSS** → Styling
 * **Class** → Reusable selector
@@ -516,7 +516,7 @@ Media Query:
 * **Flexbox** → One-dimensional layout
 * **Grid** → Two-dimensional layout
 * **Media Query** → Responsive design
-# 🔀 Git & GitHub
+#  Git & GitHub
 
 ## Git vs GitHub
 
@@ -577,7 +577,7 @@ Working Directory
 | `git checkout <branch>`   | Switch branches          |
 | `git merge`               | Merge branches           |
 
-> 💡 **Tip**
+>  **Tip**
 >
 > Writing meaningful commit messages makes it easier to understand the project's history later.
 
@@ -594,7 +594,7 @@ Git helped me:
 
 ---
 
-# 🌐 GitHub Pages
+#  GitHub Pages
 
 GitHub Pages allows static websites to be hosted directly from a GitHub repository.
 
@@ -628,7 +628,7 @@ For GitHub Pages, `index.html` is usually the homepage of the website.
 
 ---
 
-# 📝 Markdown
+#  Markdown
 
 Markdown is a lightweight language used for writing documentation.
 
@@ -647,7 +647,7 @@ I used Markdown to create README files because it is simple, readable, and suppo
 
 ---
 
-# 🛠 Tools I Used
+#  Tools I Used
 
 | Tool                | Purpose                                    |
 | ------------------- | ------------------------------------------ |
@@ -660,7 +660,7 @@ I used Markdown to create README files because it is simple, readable, and suppo
 
 ---
 
-# 💡 Key Learnings
+#  Key Learnings
 
 * Understanding concepts is more important than memorizing syntax.
 * Writing clean HTML makes CSS easier to manage.
@@ -671,7 +671,7 @@ I used Markdown to create README files because it is simple, readable, and suppo
 
 ---
 
-## 📌 Quick Revision
+##  Quick Revision
 
 * **Git** → Version control
 * **GitHub** → Online repository hosting
@@ -683,7 +683,7 @@ I used Markdown to create README files because it is simple, readable, and suppo
 
 ---
 
-# 🚀 Final Note
+#  Final Note
 
 This repository documents my learning during the initial phase of my web development internship.
 
