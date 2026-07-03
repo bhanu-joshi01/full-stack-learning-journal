@@ -1,9 +1,9 @@
 
-#  Web Development Learning Journal
+#  Full Stack Learning Journal
 
 ## About This Repository
 
-This repository contains my notes, projects, and concepts that I learned during my web development internship. I have documented everything in a simple and organized way so that I can quickly revise the concepts whenever needed.
+This repository contains my notes, projects, and concepts that I learned during my full stack internship. I have documented everything in a simple and organized way so that I can quickly revise the concepts whenever needed.
 
 The goal of this repository is to strengthen my fundamentals and track my learning throughout the internship.
 
