@@ -10,7 +10,6 @@ The goal of this repository is to strengthen my fundamentals and track my learni
 
 ## Table of Contents
 
-- [Projects Built](#projects-built)
 - [How a Website Loads](#how-a-website-loads)
 - [Browser Developer Tools](#browser-developer-tools)
 - [HTML](#html-hypertext-markup-language)
@@ -21,19 +20,10 @@ The goal of this repository is to strengthen my fundamentals and track my learni
 - [Tools I Used](#tools-i-used)
 - [Key Learnings](#key-learnings)
 - [JavaScript Functions & Events](#javascript-functions--events)
+- [JavaScript Objects & Arrays](#javascript-objects--arrays)
+- [Working with APIs & Fetch](#working-with-apis--fetch)
+- [HTTP & REST APIs](#http--rest-apis)
 
----
-
-# Projects Built
-
-| Project | Skills Practiced |
-|---------|------------------|
-| **HTTP Under the Hood** | DNS, HTTP Request & Response, Status Codes, Browser Rendering |
-| **Resume (HTML)** | Semantic HTML, Lists, Images, Links, Tables, Forms |
-| **Resume (HTML + CSS)** | CSS Selectors, Box Model, Flexbox, Grid, Responsive Design |
-| **Personal Portfolio** | Combining HTML & CSS to build a complete website |
-
----
 
 # How a Website Loads
 
@@ -611,6 +601,356 @@ The core content, navigation, and links should function using plain HTML, while 
 - Interactivity Loop → **Select → Listen → Do**
 
 ---
+# JavaScript Objects & Arrays
+
+## Objects
+
+- Stores related data as **key-value pairs**.
+- Used for users, products, employees, etc.
+
+```javascript
+const student = {
+  name: "Rahul",
+  age: 18
+};
+```
+
+### Access Properties
+
+```javascript
+student.name
+student["age"]
+```
+
+### Add / Update / Delete
+
+```javascript
+student.city = "Delhi";
+student.age = 19;
+delete student.city;
+```
+
+### Object Methods
+
+- Method = Function inside an object.
+- `this` refers to the current object.
+
+### Useful Methods
+
+- `Object.keys()` → Keys
+- `Object.values()` → Values
+- `Object.entries()` → Key-value pairs
+
+---
+
+## Arrays
+
+- Stores multiple values in order.
+- Real-world data usually comes as **arrays of objects**.
+
+```javascript
+const products = [
+  { id: 1, name: "Laptop", price: 65000 },
+  { id: 2, name: "Mouse", price: 500 }
+];
+```
+
+---
+
+## Array Methods
+
+| Method | Purpose |
+|---------|---------|
+| `forEach()` | Run code for every item |
+| `map()` | Create a new array |
+| `filter()` | Keep matching items |
+| `find()` | First matching item |
+| `some()` | Returns true if any match |
+| `every()` | Returns true if all match |
+| `sort()` | Sort items |
+| `reduce()` | Convert to one value |
+
+---
+
+## Quick Revision
+
+- Object → Key-value pairs
+- Array → Ordered list
+- `this` → Current object
+- `map()` → New array
+- `filter()` → Matching items
+- `find()` → One item
+- `reduce()` → One value
+- `some()` → Any?
+- `every()` → All?
+
+---
+
+# Working with APIs & Fetch
+
+## API
+
+- API connects the client and server.
+- Client sends a request, server sends a response.
+- One request = One response.
+
+---
+
+## Request & Response
+
+### Request
+
+- Method
+- URL
+- Headers
+- Body
+
+### Response
+
+- Status Code
+- Headers
+- Body
+
+> Always check the **status code first**.
+
+---
+
+## JSON
+
+- `response.json()` → Convert JSON to JavaScript object.
+- `JSON.stringify()` → Convert JavaScript object to JSON.
+
+---
+
+## HTTP Methods
+
+| Method | Purpose |
+|---------|---------|
+| GET | Read data |
+| POST | Create data |
+| PUT | Replace data |
+| PATCH | Update data |
+| DELETE | Remove data |
+
+---
+
+## Common Status Codes
+
+| Code | Meaning |
+|------|---------|
+| 200 | OK |
+| 201 | Created |
+| 204 | No Content |
+| 400 | Bad Request |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+| 404 | Not Found |
+| 429 | Too Many Requests |
+| 500 | Server Error |
+
+---
+
+## fetch()
+
+```javascript
+fetch(url)
+```
+
+### Using async/await
+
+```javascript
+const res = await fetch(url);
+const data = await res.json();
+```
+
+---
+
+## Sending Data
+
+```javascript
+fetch(url, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+});
+```
+
+---
+
+## Error Handling
+
+- `fetch()` throws only for network errors.
+- Check `res.ok` for HTTP errors.
+
+---
+
+## Authentication
+
+- API Key → Identifies the application.
+- Bearer Token → Identifies the user.
+- Store secrets in `.env`.
+- Never push API keys to GitHub.
+
+---
+
+## Quick Revision
+
+- API → Client ↔ Server
+- JSON → Data format
+- GET → Read
+- POST → Create
+- PUT → Replace
+- PATCH → Update
+- DELETE → Remove
+- `fetch()` → Send request
+- `await res.json()` → Read response
+- `res.ok` → Check success
+- `.env` → Store secret keys
+
+---
+
+# HTTP & REST APIs
+
+## HTTP
+
+- HTTP = Protocol for communication between Client and Server.
+- HTTP follows a Request → Response model.
+- HTTP is **Stateless** (server doesn't remember previous requests).
+
+---
+
+## HTTP vs HTTPS
+
+| HTTP | HTTPS |
+|------|-------|
+| Not Secure | Secure (TLS) |
+| Port 80 | Port 443 |
+
+---
+
+## API
+
+- API connects Client and Server.
+- API acts as a middleman.
+- Data is usually exchanged in **JSON** format.
+
+---
+
+## CRUD Operations
+
+| CRUD | HTTP Method |
+|------|-------------|
+| Create | POST |
+| Read | GET |
+| Update | PUT / PATCH |
+| Delete | DELETE |
+
+---
+
+## HTTP Methods
+
+| Method | Purpose |
+|--------|----------|
+| GET | Read data |
+| POST | Create data |
+| PUT | Replace entire resource |
+| PATCH | Update specific fields |
+| DELETE | Remove data |
+
+---
+
+## URL Structure
+
+```
+https://example.com/students/10?year=2
+
+Protocol → https
+Host → example.com
+Path → /students
+ID → 10
+Query → year=2
+```
+
+---
+
+## HTTP Request
+
+- Method
+- URL
+- Headers
+- Body
+
+---
+
+## HTTP Response
+
+- Status Code
+- Headers
+- Body
+
+Always read the **Status Code** first.
+
+---
+
+## Common Headers
+
+- Content-Type
+- Accept
+- Authorization
+- Cookie
+
+---
+
+## Common Status Codes
+
+| Code | Meaning |
+|------|---------|
+| 200 | OK |
+| 201 | Created |
+| 204 | No Content |
+| 400 | Bad Request |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+| 404 | Not Found |
+| 429 | Too Many Requests |
+| 500 | Internal Server Error |
+
+---
+
+## REST Rules
+
+- URLs should be **nouns**.
+- HTTP methods act as **verbs**.
+- Use plural resource names.
+
+Example:
+
+```
+GET /students
+POST /students
+PATCH /students/1
+DELETE /students/1
+```
+
+---
+
+## Quick Revision
+
+- HTTP → Communication protocol
+- HTTPS → Secure HTTP
+- API → Client ↔ Server
+- JSON → Data format
+- GET → Read
+- POST → Create
+- PUT → Replace
+- PATCH → Update
+- DELETE → Remove
+- 200 → Success
+- 404 → Not Found
+- 500 → Server Error
+- REST → URLs are nouns, methods are verbs
 
 # Final Note
 
