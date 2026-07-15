@@ -19,7 +19,7 @@ The goal of this repository is to strengthen my fundamentals and track my learni
 - [Markdown](#markdown)
 - [Tools I Used](#tools-i-used)
 - [Key Learnings](#key-learnings)
-- [JavaScript Functions & Events](#javascript-functions--events)
+- [JavaScript Functions](#javascript-functions)
 - [JavaScript Objects & Arrays](#javascript-objects--arrays)
 - [Working with APIs & Fetch](#working-with-apis--fetch)
 - [HTTP & REST APIs](#http--rest-apis)
@@ -448,157 +448,171 @@ I used Markdown to create README files because it is simple, readable, and suppo
 - GitHub Pages → Host static websites
 - Markdown → Documentation
 ---
-  # JavaScript Functions & Events
+## JavaScript Functions
 
-JavaScript is what makes webpages reactive and interactive.
+JavaScript functions are reusable blocks of code used to perform a specific task. They help make code modular, reusable, and easier to maintain.
 
----
+### Function Declaration
 
-# What is a Function?
+```javascript
+function greet(name) {
+    return `Hello, ${name}!`;
+}
 
-A function is a reusable block of code that does one job. You write it once, then run it whenever you need it, as many times as you like.
+console.log(greet("Bhanu"));
+```
 
-## Why use Functions?
+### Function Expression
 
-- **Reusability:** Write once, use many times.
-- **Maintainability:** Fix a bug in one place rather than in multiple places.
-- **Organized code:** Each job lives in its own designated box.
-- **Easier debugging:** Problems are much easier to locate.
-- **Better readability:** A well-named function explains exactly what it does.
-- **Unit testing:** Small pieces of logic are simple to test independently.
+```javascript
+const add = function(a, b) {
+    return a + b;
+};
 
-> **Rule of Thumb:**  
-> A good function has a single responsibility. Keep it short (around 20–30 lines). If you cannot describe what it does in one short sentence, it is probably doing too much and should be split up.
+console.log(add(5, 3));
+```
 
----
+### Arrow Function
 
-# Syntax: Parameters vs Arguments
+```javascript
+const square = (num) => num * num;
 
-## Parameters
+console.log(square(5));
+```
 
-Parameters are the names in the function definition. They act as placeholders for the values that will be passed later.
+### Parameters & Arguments
 
-## Arguments
+- **Parameters** are variables defined in a function.
+- **Arguments** are the values passed while calling the function.
 
-Arguments are the actual values you pass when calling the function.
+```javascript
+function multiply(a, b) {
+    return a * b;
+}
 
----
+console.log(multiply(4, 6));
+```
 
-# The `return` Statement
+### Return Statement
 
-The `return` statement sends a value back out of the function so you can use it elsewhere in your program.
+```javascript
+function cube(num) {
+    return num ** 3;
+}
 
-Once `return` executes, the function stops immediately.
+console.log(cube(3));
+```
 
-Functions without a `return` statement automatically return `undefined`.
+### Callback Function
 
----
+A callback is a function passed as an argument to another function.
 
-# Pure vs Impure Functions
+```javascript
+function process(callback) {
+    callback();
+}
 
-## Pure Functions
+process(() => {
+    console.log("Task Completed");
+});
+```
 
-Pure functions always produce the same output for the same input.
+### Scope
 
-They:
+- Global Scope
+- Local Scope
+- Block Scope
 
-- Have no side effects.
-- Don't modify anything outside themselves.
-- Are easy to test and predict.
+```javascript
+let language = "JavaScript";
 
-## Impure Functions
-
-Impure functions interact with the outside world.
-
-Examples include:
-
-- Modifying the DOM
-- Reading or changing global variables
-- Using random values
-- Accessing the current date or time
-
----
-
-# Ways to Write a Function
-
-| Style | Syntax |
-|--------|--------|
-| Function Declaration | `function add(a, b) { return a + b; }` |
-| Function Expression | `const add = function(a, b) { ... };` |
-| Arrow Function (Full Body) | `const add = (a, b) => { return a + b; };` |
-| Arrow Function (Implicit Return) | `const add = (a, b) => a + b;` |
+function showLanguage() {
+    console.log(language);
+}
+```
 
 ---
 
 # JavaScript Events
 
-An event is something that happens on the webpage, such as a click, key press, or form submission.
+An **event** is an action that occurs in the browser, such as clicking a button, typing in an input box, or moving the mouse. JavaScript can respond to these events using event listeners.
 
-You attach a function that runs whenever that event occurs to make the page interactive.
+## Common Events
 
----
-
-# `addEventListener()`
-
-`addEventListener()` is the primary method for handling events.
-
-It requires:
-
-1. The event name.
-2. A callback function that runs when the event occurs.
-
-> **Note:** Pass named callbacks **without parentheses**.
->
-> ✅ `changeColor`
->
-> ❌ `changeColor()`
->
-> Using parentheses executes the function immediately instead of waiting for the event.
+| Event | Description |
+|--------|-------------|
+| click | Triggered when an element is clicked |
+| dblclick | Triggered on double click |
+| mouseover | Mouse enters an element |
+| mouseout | Mouse leaves an element |
+| keydown | A key is pressed |
+| keyup | A key is released |
+| input | Input value changes |
+| submit | Form is submitted |
+| change | Input value changes after losing focus |
+| load | Page finishes loading |
 
 ---
 
-# Common Events
+## Event Listener
 
-| Event | Fires When... |
-|--------|---------------|
-| `click` | An element is clicked |
-| `mousemove` | The mouse moves over an element |
-| `keydown` | A key is pressed |
-| `input` | The value of an input field changes |
-| `submit` | A form is submitted |
+The `addEventListener()` method is the preferred way to handle events.
 
----
+```javascript
+const button = document.querySelector("button");
 
-# The Event Handling Pattern
-
-Almost every interactive feature on the web follows this simple loop:
-
-1. Select the element using `querySelector()`.
-2. Listen with `addEventListener()`.
-3. Do something inside the callback function (usually modify the DOM).
-
-To remove an event listener, use `removeEventListener()`. It only works if you pass the **exact same named function** that was originally added.
+button.addEventListener("click", () => {
+    alert("Button Clicked!");
+});
+```
 
 ---
 
-# Graceful Degradation
+## Event Object
 
-A webpage should still make sense even without JavaScript.
+JavaScript automatically passes an event object containing information about the event.
 
-The core content, navigation, and links should function using plain HTML, while JavaScript enhances the user experience with additional interactivity.
+```javascript
+document.addEventListener("click", function(event) {
+    console.log(event.target);
+});
+```
 
 ---
 
-# Quick Revision
+## Prevent Default Action
 
-- Function → Performs one specific task.
-- Parameters → Placeholders in the function definition.
-- Arguments → Actual values passed to the function.
-- Return → Sends a value back.
-- Callback → Function passed to another function without parentheses.
-- `addEventListener()` → Listens for events.
-- Event → User or browser action.
-- Interactivity Loop → **Select → Listen → Do**
+```javascript
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    console.log("Form submission prevented.");
+});
+```
+
+---
+
+## Practice Example
+
+```javascript
+const btn = document.getElementById("btn");
+
+btn.addEventListener("click", () => {
+    btn.textContent = "Clicked!";
+});
+```
+
+---
+
+## Key Learnings
+
+- Learned different types of JavaScript functions.
+- Understood parameters, arguments, and return values.
+- Practiced callback functions and variable scope.
+- Learned how JavaScript responds to browser events.
+- Used `addEventListener()` to handle user interactions.
+- Understood the event object and `preventDefault()`.
 
 ---
 # JavaScript Objects & Arrays
